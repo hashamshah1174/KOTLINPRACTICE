@@ -1,28 +1,35 @@
 package com.example.testing.ui.dashboard
 
+import android.content.Context
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.testing.R
+import com.example.testing.model.database.RecordDatabase
 import com.example.testing.model.datamodel.FavouriteRecord
 import com.example.testing.model.datamodel.Record
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class DashboardViewModel : ViewModel() {
+class DashboardViewModel (private val context: Context): ViewModel() {
 
-//    private val _text = MutableLiveData<String>().apply {
+    //    private val _text = MutableLiveData<String>().apply {
 //        value = "This is dashboard Fragment"
 //    }
 //    val text: LiveData<String> = _text
-private var RecordList: MutableLiveData<List<Record>> = MutableLiveData()
-
+    private var RecordList: MutableLiveData<List<Record>> = MutableLiveData()
     fun getAllRecords(): LiveData<List<Record>>{
         viewModelScope.launch(Dispatchers.IO ){
-            val records = arrayListOf<Record>()
-            for(i in 0..10){
-                records.add(Record(R.drawable.user, "DSU Student-"+i, "Hello this is Des" ))
+
+
+            val db = RecordDatabase.getInstance(context);
+            val recordData=db.recordDao().getAll();
+            val records = arrayListOf<Record>();
+            recordData.forEach {
+                records.add(it)
                 RecordList.postValue(records)
             }
         }

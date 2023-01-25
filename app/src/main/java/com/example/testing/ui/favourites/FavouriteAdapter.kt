@@ -23,6 +23,7 @@ class FavouriteAdapter(private val fav_records: List<FavouriteRecord>) : Recycle
     override fun onBindViewHolder(holder: LikeViewHolder, position: Int) {
         val fav_records = fav_records.get(position)
         holder.binding.tvFavName.text = fav_records.name
+        holder.binding.tvFavDesc.text =fav_records.desc;
         if(!fav_records.isFav)
             holder.binding.ivIconFav.visibility= View.GONE
     }

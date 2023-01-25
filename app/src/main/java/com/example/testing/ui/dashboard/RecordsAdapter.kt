@@ -22,6 +22,7 @@ class RecordsAdapter(private val context: Context, private val records: List<Rec
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val model = records[position]
         holder.binding.tvName.text = model.name
+        holder.binding.tvDesc.text = model.name
 //        holder.binding.img.setImageResourse(model.image)
     }
 
