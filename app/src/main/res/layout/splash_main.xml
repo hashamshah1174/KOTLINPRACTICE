@@ -3,7 +3,7 @@
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:gravity="center"
-android:background="@color/black">
+android:background="@color/splash">
 
 
     <ImageView
@@ -18,7 +18,7 @@ android:background="@color/black">
         android:layout_height="wrap_content"
         android:layout_below="@+id/logo_id"
         android:layout_centerHorizontal="true"
-        android:text="DSU Portal"
+        android:text="Android Practice"
         android:textSize="35dp"
         android:layout_marginTop="20dp"
         android:textColor="@color/white"/>

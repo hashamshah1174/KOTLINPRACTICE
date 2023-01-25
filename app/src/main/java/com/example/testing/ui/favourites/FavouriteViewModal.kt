@@ -25,7 +25,7 @@ private var favRecordList: MutableLiveData<List<FavouriteRecord>> = MutableLiveD
                         FavouriteRecord(
                             R.drawable.user,
                             "CS1910${i}0",
-                            "DESCRIPTION" , i%2==0 ))
+                            "BSCS 7A " , i%2==0 ))
 
                 favRecordList.postValue(records)
             }

@@ -25,8 +25,7 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+        val dashboardViewModel = ViewModelProvider(this, DashboardViewModelFactory(requireContext())).get(DashboardViewModel::class.java)
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -35,10 +34,6 @@ class DashboardFragment : Fragment() {
             binding.rvRecords.adapter = RecordsAdapter(requireContext(),it)
         }
 
-//        val textView: TextView = binding.textDashboard
-//        dashboardViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
         return root
     }
 
