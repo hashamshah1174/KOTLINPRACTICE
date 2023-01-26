@@ -41,7 +41,7 @@ class HomeFragment : Fragment() {
         val users = ArrayList<User>()
 
         //adding some dummy data to the list
-        users.add(User(R.drawable.user1, "Muhammad Usman", "Karachi,Pakistan"))
+        users.add(User(R.drawable.user1, "Hasham Shah", "Karachi,Pakistan"))
         users.add(User(R.drawable.user, "Shahid Anwar", "Islamabad,Pakistan"))
         users.add(User(R.drawable.user, "Shakeel Ahmed", "Karachi,Pakistan"))
         users.add(User(R.drawable.user, "Umer Akmal", "Karachi,Pakistan"))
